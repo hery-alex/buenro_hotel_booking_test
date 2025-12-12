@@ -1,12 +1,13 @@
 library;
 
 import 'dart:convert';
-import 'package:buenro_hotel_booking_test/api_library/api_exceptions/bunero_api_exceptions.dart';
+import 'package:buenro_hotel_booking_test/api_library/api_exceptions/buenro_api_exceptions.dart';
+import 'package:buenro_hotel_booking_test/data_models/hotels_screen_model/hotels_screen_model.dart';
 import 'package:buenro_hotel_booking_test/env/env.dart';
 import 'package:http/http.dart' as http;
  
 
- part '../api_endpoints/bunero_google_search_endpoints.dart';
+ part '../api_endpoints/buenro_google_search_endpoints.dart';
 
 /// The JSON serializable model for the API response.
 typedef JSON = Map<String, dynamic>;

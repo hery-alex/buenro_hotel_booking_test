@@ -14,7 +14,7 @@ import 'package:buenro_hotel_booking_test/screens/account_screen/account_screen_
     as _i1;
 import 'package:buenro_hotel_booking_test/screens/favourites_screen/favourites_screen_view.dart'
     as _i2;
-import 'package:buenro_hotel_booking_test/screens/hotels_screen/hotels_screen_view.dart'
+import 'package:buenro_hotel_booking_test/screens/hotels_screen/hotels_screen_view/hotels_screen_view.dart'
     as _i3;
 import 'package:buenro_hotel_booking_test/screens/landing_screen/landing_screen.dart'
     as _i4;

@@ -1,8 +1,8 @@
-part of 'package:buenro_hotel_booking_test/api_library/api_base/bunero_api_base.dart';
+part of 'package:buenro_hotel_booking_test/api_library/api_base/buenro_api_base.dart';
 
 class GoogleSearchEndpoint extends BuenroApiBase{
     
-   Future<List<dynamic>> searchHotelsFromGoogle () async{
+   Future<List<HotelsScreenModel>> searchHotelsFromGoogle () async{
     
     final uri =  Uri.https(_baseUrl, '/search.json',{
             "api_key": BuenroEnv.apiKey ,  
