@@ -7,14 +7,15 @@ abstract class HotelsScreenState {
 class HotelsScreenLoading extends HotelsScreenState {}
 
 class HotelsScreenLoaded extends HotelsScreenState {
-  final List<HotelsScreenModel> hotelItems;
-
+  final dynamic hotelItems;
+  final String apiKey;
   HotelsScreenLoaded({
     this.hotelItems = const [],
+    this.apiKey = ''
   });
 
     HotelsScreenLoaded copyWith({
-     List<HotelsScreenModel>? hotelItems,
+     dynamic hotelItems,
   }) {
     return HotelsScreenLoaded(
       hotelItems: hotelItems ?? this.hotelItems,

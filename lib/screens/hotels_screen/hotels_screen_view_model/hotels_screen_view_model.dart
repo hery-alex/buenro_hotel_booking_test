@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:buenro_hotel_booking_test/api_library/api_base/buenro_api_base.dart';
 import 'package:buenro_hotel_booking_test/screens/hotels_screen/hotels_screen_events/hotels_screen_events.dart';
 import 'package:buenro_hotel_booking_test/screens/hotels_screen/hotels_screen_state/hotels_screen_state.dart';
@@ -13,7 +15,7 @@ class HotelsScreenViewModel extends Bloc<HotelsListEvent, HotelsScreenState> {
     on<LoadHotelList>((event, emit) async {
       try {
         final result = await googleSearchEndpointHotels.searchHotelsFromGoogle();
-        emit(HotelsScreenLoaded(hotelItems: result));
+        emit(HotelsScreenLoaded(hotelItems: json.decode(result),apiKey: result));
       } catch (e) {
         emit(HotelsScreenError(e.toString()));
       }

@@ -36,7 +36,7 @@ class BuenroApiBase {
 //-----------------------------------
 
 
-  final String _baseUrl ="https://serpapi.com";
+  final String _baseUrl ="serpapi.com";
 
 
 
@@ -45,8 +45,8 @@ class BuenroApiBase {
   Map<String, dynamic> get _apiHeaders => <String, String>{
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Accept-Encoding': 'gzip, deflate,br',
-        'Connection': 'keep-alive'
+        'Accept-Encoding': 'identity',
+        'Connection': 'keep-alive',
       };
 //--------------------------------------------------------
 
@@ -101,7 +101,6 @@ class BuenroApiBase {
     } catch (error) {
       throw HttpException();
     }
-    
     if (response.isFailure) {
       _handleException(response);
     }
@@ -200,7 +199,9 @@ class BuenroApiBase {
 
   //--------------------------------------------------------------------
   T _handleResponse<T>(http.Response response) {
-    if (response.body.isEmpty) {
+     if(response.bodyBytes.isNotEmpty) {
+      return utf8.decode(response.bodyBytes) as T;
+    }else if (response.body.isEmpty) {
       return response as T;
     } else {
       try {
