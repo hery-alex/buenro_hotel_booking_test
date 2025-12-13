@@ -2,7 +2,7 @@ part of 'package:buenro_hotel_booking_test/api_library/api_base/buenro_api_base.
 
 class GoogleSearchEndpoint extends BuenroApiBase{
     
-   Future<dynamic> searchHotelsFromGoogle () async{
+   Future<List<HotelsScreenModel>> searchHotelsFromGoogle () async{
     
     final uri =  Uri.https(_baseUrl, '/search.json',{
             "api_key": BuenroEnv.apiKey ,  
@@ -17,13 +17,12 @@ class GoogleSearchEndpoint extends BuenroApiBase{
        );
 
       final response = await _get(uri);
-      return response; 
+      List<HotelsScreenModel> resultList = [];
+      for(var singleHotel in json.decode(response)["answer_box"]["hotels"]){
+       resultList.add(HotelsScreenModel.fromJson(singleHotel));
+      }
+      return resultList; 
    }
-
-   Future<String> getApiKey() async{
-    return BuenroEnv.apiKey;
-   }
-
 
 
 }

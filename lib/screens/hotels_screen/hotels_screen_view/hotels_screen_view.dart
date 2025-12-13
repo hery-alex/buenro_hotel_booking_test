@@ -22,7 +22,7 @@ class HotelsScreen extends StatelessWidget {
                        if (state is HotelsScreenLoading) {
                         return const Center(child: CircularProgressIndicator());
                       } else if (state is HotelsScreenLoaded) {  
-                        return Text('${state.hotelItems["answer_box"]}');
+                        return Text('${state.hotelItems[0].title}');
                       } else if (state is HotelsScreenError) {
                         return Center(child: Text(state.message));
                       }
