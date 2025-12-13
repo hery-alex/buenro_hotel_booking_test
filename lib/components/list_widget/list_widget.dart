@@ -11,13 +11,17 @@ class BuneroListWidget extends StatelessWidget {
     return  CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: Text.rich(
-            TextSpan(
-              text: headlineText ,
-              style:Theme.of(context).textTheme.headlineSmall?.apply(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                )
-            )
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text.rich(
+              textAlign: TextAlign.center,
+              TextSpan(
+                text: headlineText ,
+                style:Theme.of(context).textTheme.headlineSmall?.apply(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                  )
+              )
+            ),
           ),
         ),
         switch(listWidgetParameter){

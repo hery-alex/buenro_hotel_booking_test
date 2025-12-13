@@ -21,13 +21,13 @@ class BuneroHotelBookingTheme {
     
    static TextTheme textTheme = const TextTheme(
      headlineLarge: TextStyle(
-      fontSize: 34
+      fontSize: 28
      ),
      headlineMedium:TextStyle(
-      fontSize: 32
+      fontSize: 26
      ),
      headlineSmall: TextStyle(
-      fontSize: 18
+      fontSize: 24
      ),
      bodyLarge: TextStyle(
       fontSize: 16,
