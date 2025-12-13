@@ -5,7 +5,7 @@
   ### 1. Application Start : 
   Application requires .env file which will contain the API Key in order to get data from SerpApi.( File will be provided via email).
 
-  After the .env file has been added to the repository a simple ''' flutter run ''' will start the app
+  After the .env file has been added to the repository run ''' dart run build_runner build '''  and then a simple ''' flutter run ''' will start the app
   ### 2. Application contents and architecture :
 
   #### 1.State Management <br /> 
@@ -40,4 +40,29 @@
 ## Folder structure and other explanations: 
 
 ### 1. Folder Structure:
+  
+   #### 1.api_library   <br /> 
+   -> the api library with will contain the base file (with all the methods that can be accessed), api_exceptions where more complex can be added and an endpoints folder that based on the same domain multiple endpoints can be added 
 
+   #### 2.components   <br /> 
+   -> this is a components library with widgets that can and should be reused all over the application
+   -> One example is hotels list -> is a list widget that can accept a list as a parameter but the parameters had been sealed to not pass something that can't be accepted ( use of seal class and build them based on type)
+
+
+   #### 3.data models   <br /> 
+   -> data models that are being created when data is returning from api. This models are then passed from view model to view to display different data
+
+   #### 4.l10n   <br /> 
+   -> localisation data for languages  (the .arb files)
+
+   #### 5.router  <br />
+   -> the routes configuration
+
+   #### 6.screens  <br />
+   -> all screens needed with their view and view-model
+
+   #### 7.theme  <br />
+   -> theme of the app
+
+   #### 8.env  <br />
+   -> environmental files needed
