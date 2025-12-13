@@ -12,7 +12,7 @@ class GoogleSearchEndpoint extends BuenroApiBase{
             "google_domain": "google.co.uk",
             "gl": "uk",
             "hl": "en",
-            "device": "mobile"  
+            "device": "desktop"  
           }
        );
 
